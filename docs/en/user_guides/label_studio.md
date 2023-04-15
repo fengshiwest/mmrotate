@@ -85,7 +85,7 @@ device=cpu \
 # Set device=cpu to use CPU inference, and replace cpu with cuda:0 to use GPU inference.
 ```
 
-![](../../../projects/LabelStudio/images/label_studio_ml_start.png)
+![](https://github.com/fengshiwest/mmrotate/blob/add_image/projects/LabelStudio/images/label_studio_ml_start.png)
 
 The RTMDet-R backend inference service has now been started. To configure it in the Label-Studio web system, use http://localhost:8003 as the backend inference service.
 
@@ -95,25 +95,25 @@ Now, start the Label-Studio web service:
 label-studio start
 ```
 
-![](../../../projects/LabelStudio/images/label_studio_start.png)
+![](https://github.com/fengshiwest/mmrotate/blob/add_image/projects/LabelStudio/images/label_studio_start.png)
 
 Open your web browser and go to http://localhost:8080/ to see the Label-Studio interface.
 
-![](../../../projects/LabelStudio/images/sign_up.png)
+![](https://github.com/fengshiwest/mmrotate/blob/add_image/projects/LabelStudio/images/sign_up.png)
 
 Register a user and then create an RTMDet-R-Semiautomatic-Label project.
 
-![](../../../projects/LabelStudio/images/create_project.png)
+![](https://github.com/fengshiwest/mmrotate/blob/add_image/projects/LabelStudio/images/create_project.png)
 
 Download the example DOTA images by following [MMRotate Preparing DOTA Dataset](https://github.com/open-mmlab/mmrotate/blob/main/tools/data/dota/README.md) and import them using the Data Import button.
 
-![](../../../projects/LabelStudio/images/data_import.png)
+![](https://github.com/fengshiwest/mmrotate/blob/add_image/projects/LabelStudio/images/data_import.png)
 
-![](../../../projects/LabelStudio/images/data_import_from_file.png)
+![](https://github.com/fengshiwest/mmrotate/blob/add_image/projects/LabelStudio/images/data_import_from_file.png)
 
 Then, select the Object Detection With Bounding Boxes template.
 
-![](../../../projects/LabelStudio/images/templete_select.png)
+![](https://github.com/fengshiwest/mmrotate/blob/add_image/projects/LabelStudio/images/templete_select.png)
 
 ```shell
 plane
@@ -135,40 +135,40 @@ swimming-pool
 
 Then, copy and add the above categories to Label-Studio and click Save.
 
-![](../../../projects/LabelStudio/images/add_label.png)
+![](https://github.com/fengshiwest/mmrotate/blob/add_image/projects/LabelStudio/images/add_label.png)
 
 In the Settings, click Add Model to add the RTMDet-R backend inference service.
 
-![](../../../projects/LabelStudio/images/add_model.png)
+![](https://github.com/fengshiwest/mmrotate/blob/add_image/projects/LabelStudio/images/add_model.png)
 
 Click Validate and Save, and then click Start Labeling.
 
-![](../../../projects/LabelStudio/images/validate_and_save.png)
+![](https://github.com/fengshiwest/mmrotate/blob/add_image/projects/LabelStudio/images/validate_and_save.png)
 
 If you see Connected as shown below, the backend inference service has been successfully added.
 
-![](../../../projects/LabelStudio/images/connected.png)
+![](https://github.com/fengshiwest/mmrotate/blob/add_image/projects/LabelStudio/images/connected.png)
 
 ## Start Semi-Automatic Labeling
 
 Click on Label to start labeling.
 
-![](../../../projects/LabelStudio/images/click_label.png)
+![](https://github.com/fengshiwest/mmrotate/blob/add_image/projects/LabelStudio/images/click_label.png)
 
 We can see that the RTMDet-R backend inference service has successfully returned the predicted results and displayed them on the image. However, we noticed that there are some missed predicted bounding boxes.
 
-![](../../../projects/LabelStudio/images/label_result.png)
+![](https://github.com/fengshiwest/mmrotate/blob/add_image/projects/LabelStudio/images/label_result.png)
 
 We manually add some annotation boxes, adjust the position of the boxes to get the following corrected annotation, and then click Submit to complete the annotation of this image.
 
-![](../../../projects/LabelStudio/images/label_result_refined.png)
+![](https://github.com/fengshiwest/mmrotate/blob/add_image/projects/LabelStudio/images/label_result_refined.png)
 
 After submitting all images, click export to export the labeled dataset in COCO format.
 
-![](../../../projects/LabelStudio/images/label_export.png)
+![](https://github.com/fengshiwest/mmrotate/blob/add_image/projects/LabelStudio/images/label_export.png)
 
 Use VSCode to open the unzipped folder to see the labeled dataset, which includes the images and the annotation files in JSON format.
 
-![](../../../projects/LabelStudio/images/json_show.png)
+![](https://github.com/fengshiwest/mmrotate/blob/add_image/projects/LabelStudio/images/json_show.png)
 
 At this point, the semi-automatic labeling is complete. We can use this dataset to train a more accurate model in MMRotate and then continue semi-automatic labeling on newly collected images with this model. This way, we can iteratively expand the high-quality dataset and improve the accuracy of the model.

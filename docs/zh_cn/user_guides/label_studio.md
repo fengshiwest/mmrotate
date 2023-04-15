@@ -84,7 +84,7 @@ device=cpu \
 # device=cpu 为使用 CPU 推理，如果使用 GPU 推理，将 cpu 替换为 cuda:0
 ```
 
-![](../../../projects/LabelStudio/images/label_studio_ml_start.png)
+![](https://github.com/fengshiwest/mmrotate/blob/add_image/projects/LabelStudio/images/label_studio_ml_start.png)
 
 此时，RTMDet-R 后端推理服务已经启动，后续在 Label-Studio Web 系统中配置 http://localhost:8003 后端推理服务即可。
 
@@ -94,25 +94,25 @@ device=cpu \
 label-studio start
 ```
 
-![](../../../projects/LabelStudio/images/label_studio_start.png)
+![](https://github.com/fengshiwest/mmrotate/blob/add_image/projects/LabelStudio/images/label_studio_start.png)
 
 打开浏览器访问 [http://localhost:8080/](http://localhost:8080/) 即可看到 Label-Studio 的界面。
 
-![](../../../projects/LabelStudio/images/sign_up.png)
+![](https://github.com/fengshiwest/mmrotate/blob/add_image/projects/LabelStudio/images/sign_up.png)
 
 我们注册一个用户，然后创建一个 RTMDet-R-Semiautomatic-Label 项目。
 
-![](../../../projects/LabelStudio/images/create_project.png)
+![](https://github.com/fengshiwest/mmrotate/blob/add_image/projects/LabelStudio/images/create_project.png)
 
 我们按照 [MMRotate Preparing DOTA Dataset](https://github.com/open-mmlab/mmrotate/blob/main/tools/data/dota/README.md) 下载好示例的DOTA图片，点击 Data Import 导入需要标注的图片。
 
-![](../../../projects/LabelStudio/images/data_import.png)
+![](https://github.com/fengshiwest/mmrotate/blob/add_image/projects/LabelStudio/images/data_import.png)
 
-![](../../../projects/LabelStudio/images/data_import_from_file.png)
+![](https://github.com/fengshiwest/mmrotate/blob/add_image/projects/LabelStudio/images/data_import_from_file.png)
 
 然后选择 Object Detection With Bounding Boxes 模板。
 
-![](../../../projects/LabelStudio/images/templete_select.png)
+![](https://github.com/fengshiwest/mmrotate/blob/add_image/projects/LabelStudio/images/templete_select.png)
 
 ```shell
 plane
@@ -134,40 +134,40 @@ swimming-pool
 
 然后将上述类别复制添加到 Label-Studio，然后点击 Save。
 
-![](../../../projects/LabelStudio/images/add_label.png)
+![](https://github.com/fengshiwest/mmrotate/blob/add_image/projects/LabelStudio/images/add_label.png)
 
 然后在设置中点击 Add Model 添加 RTMDet-R 后端推理服务。
 
-![](../../../projects/LabelStudio/images/add_model.png)
+![](https://github.com/fengshiwest/mmrotate/blob/add_image/projects/LabelStudio/images/add_model.png)
 
 点击 Validate and Save，然后点击 Start Labeling。
 
-![](../../../projects/LabelStudio/images/validate_and_save.png)
+![](https://github.com/fengshiwest/mmrotate/blob/add_image/projects/LabelStudio/images/validate_and_save.png)
 
 看到如下 Connected 就说明后端推理服务添加成功。
 
-![](../../../projects/LabelStudio/images/connected.png)
+![](https://github.com/fengshiwest/mmrotate/blob/add_image/projects/LabelStudio/images/connected.png)
 
 ## 开始半自动化标注
 
 点击 Label 开始标注
 
-![](../../../projects/LabelStudio/images/click_label.png)
+![](https://github.com/fengshiwest/mmrotate/blob/add_image/projects/LabelStudio/images/click_label.png)
 
 我们可以看到 RTMDet-R 后端推理服务已经成功返回了预测结果并显示在图片上，我们可以发现存在一些漏检的情况。
 
-![](../../../projects/LabelStudio/images/label_result.png)
+![](https://github.com/fengshiwest/mmrotate/blob/add_image/projects/LabelStudio/images/label_result.png)
 
 我们手工添加一些标注框，并修正一下框的位置，得到以下修正过后的标注，然后点击 Submit，本张图片就标注完毕了。
 
-![](../../../projects/LabelStudio/images/label_result_refined.png)
+![](https://github.com/fengshiwest/mmrotate/blob/add_image/projects/LabelStudio/images/label_result_refined.png)
 
 我们 submit 完毕所有图片后，点击 export 导出 COCO 格式的数据集，就能把标注好的数据集的压缩包导出来了。
 
-![](../../../projects/LabelStudio/images/label_export.png)
+![](https://github.com/fengshiwest/mmrotate/blob/add_image/projects/LabelStudio/images/label_export.png)
 
 用 VSCode 打开解压后的文件夹，可以看到标注好的数据集，包含了图片和 json 格式的标注文件。
 
-![](../../../projects/LabelStudio/images/json_show.png)
+![](https://github.com/fengshiwest/mmrotate/blob/add_image/projects/LabelStudio/images/json_show.png)
 
 到此半自动化标注就完成了，我们可以用这个数据集在 MMRotate 训练精度更高的模型了，训练出更好的模型，然后再用这个模型继续半自动化标注新采集的图片，这样就可以不断迭代，扩充高质量数据集，提高模型的精度。
